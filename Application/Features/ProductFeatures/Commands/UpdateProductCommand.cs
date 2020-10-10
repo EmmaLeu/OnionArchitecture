@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace Application.Features.ProductFeatures.Commands
 
             public async Task<int> Handle(UpdateProductCommand command, CancellationToken cancellationToken)
             {
-                var product = _context.Products.Where(a => a.Id == command.Id).FirstOrDefault();
+                var product = await _context.Products.Where(a => a.Id == command.Id).FirstOrDefaultAsync(cancellationToken);
 
                 if (product == null)
                 {

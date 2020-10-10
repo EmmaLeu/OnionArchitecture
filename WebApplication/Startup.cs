@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Persistance;
 using System;
 
 namespace WebApplication
@@ -36,7 +37,7 @@ namespace WebApplication
             });
 
             services.AddApplication();
-            services.AddPersistance();
+            services.AddPersistance(Configuration);
         }
 
         ///<summary>This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</summary>

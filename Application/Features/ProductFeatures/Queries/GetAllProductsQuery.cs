@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Features.ProductFeatures.Querries
+namespace Application.Features.ProductFeatures.Queries
 {
     public class GetAllProductsQuery : IRequest<IEnumerable<Product>>
     {
